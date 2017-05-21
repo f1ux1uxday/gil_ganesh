@@ -1,0 +1,39 @@
+html,body {
+	color: #262626;
+	text-align: center;
+	font-size: 150%;
+	font-family: 'Lucida Console', Monaco, monospace;
+	background-repeat: repeat;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	overflow:auto;
+}
+
+#temperature {
+	margin:auto;
+}
+
+#imgdiv {
+	width: 100%;
+	height: 200%;
+}
+
+#conditions {
+	font-size: 3em;
+	color: yellow;
+}
+
+@media (max-width: 600px) {
+	body {
+		font-size: 90%;
+	}
+
+	#weatherBox {
+		width: 80%;
+	}
+
+	#imgdiv {
+		font-size: 70%;
+	}
