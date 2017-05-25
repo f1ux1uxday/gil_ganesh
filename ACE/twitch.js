@@ -86,5 +86,5 @@ function StreamerInfo(channels, streams) {
 
 /*function getBanner(){
 	$('#' + displayName).css("background-image", "url(" + banner + ")");
-	}...
+	}
 }*/
