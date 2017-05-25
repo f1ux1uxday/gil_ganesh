@@ -1,25 +1,25 @@
 $(document).ready(function() {
   var streamArray = [
-    "ESL_SC2",
-    "cretetion",
-    "freecodecamp",
-    "storbeck",
-    "habathcx",
-    "RobotCaleb",
-    "noobs2ninjas",
-    "0gamingSC2"
+    'ESL_SC2',
+    'cretetion',
+    'freecodecamp',
+    'storbeck',
+    'habathcx',
+    'RobotCaleb',
+    'noobs2ninjas',
+    '0gamingSC2'
   ];
 
   for (var i = 0; i < streamArray.length; i++) {
     var apiChans =
-      "https://api.twitch.tv/kraken/channels/" + 
+      'https://api.twitch.tv/kraken/channels/' + 
       streamArray[i] + 
-      "?client_id=v3vqtgs52allv1w9trvwc1odqx5huh";
+      '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
 
     var apiStreams =
-      "https://api.twitch.tv/kraken/streams/" +
+      'https://api.twitch.tv/kraken/streams/' +
       streamArray[i] +
-      "?client_id=v3vqtgs52allv1w9trvwc1odqx5huh";
+      '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
 
     console.log(apiChans);
 
@@ -39,8 +39,8 @@ function StreamerInfo(channels, streams) {
     if (description !== null) {
         $.ajax({
           url: streams,
-          datatype: "jsonp",
-          data: { format: "json" },
+          datatype: 'jsonp',
+          data: { format: 'json' },
           success: function(data2) {
             console.log(data2);
             /*console.log(apiStreams);*/
@@ -55,9 +55,9 @@ function StreamerInfo(channels, streams) {
               $('#output').append('<p> this channel is not streaming at this time.</p>');
 
               if (banner !== null) {
-              	$('#' + displayName).css("background-image", "url(" + banner + ")");
+              	$('#' + displayName).css('background-image', 'url(' + banner + ')');
               } else {
-              	$('#' + displayName).css("background-color", "#7F0215");
+              	$('#' + displayName).css('background-color', '#7F0215');
               }
 
             } else {
@@ -70,9 +70,9 @@ function StreamerInfo(channels, streams) {
               $('#output').append('<p> this channel is currently streaming: ' + data1.game + '</p>')
 
               if (banner !== null) {
-              	$('#' + displayName).css("background-image", "url(" + banner + ")");
+              	$('#' + displayName).css('background-image', 'url(' + banner + ')');
               } else {
-              	$('#' + displayName).css("background-color", "#0F7001");
+              	$('#' + displayName).css('background-color', '#0F7001');
               }
             }
 
