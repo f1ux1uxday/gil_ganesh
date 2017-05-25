@@ -12,14 +12,14 @@ $(document).ready(function() {
 
   for (var i = 0; i < streamArray.length; i++) {
     var apiChans =
-      'https://api.twitch.tv/kraken/channels/' + 
-      streamArray[i] + 
-      '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
+    'https://api.twitch.tv/kraken/channels/' + 
+    streamArray[i] + 
+    '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
 
     var apiStreams =
-      'https://api.twitch.tv/kraken/streams/' +
-      streamArray[i] +
-      '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
+    'https://api.twitch.tv/kraken/streams/' +
+    streamArray[i] +
+    '?client_id=v3vqtgs52allv1w9trvwc1odqx5huh';
 
     console.log(apiChans);
 
@@ -37,54 +37,49 @@ function StreamerInfo(channels, streams) {
       console.log(data1);
 
     if (description !== null) {
-        $.ajax({
-          url: streams,
-          datatype: 'jsonp',
-          data: { format: 'json' },
-          success: function(data2) {
-            console.log(data2);
+      $.ajax({
+        url: streams,
+        datatype: 'jsonp',
+        data: { format: 'json' },
+        success: function(data2) {
+          console.log(data2);
             /*console.log(apiStreams);*/
 
-            if (data2.stream === null) {
-              offOn = 0;
+          if (data2.stream === null) {
+            offOn = 0;
 
-              $('#output').append('<li id=' + displayName + '><img src=' + data1.logo + ' width="100" height="100"> <h2>' + 
-              	displayName + '</h2><h4 id="status"><a href=' + chanUrl + '>' +
-              	 description + '</a></h4></li>');
+            $('#output').append('<li id=' + displayName + '><img src=' + data1.logo + ' width="100" height="100"> <h2>' + 
+            displayName + '</h2><h4 id="status"><a href=' + chanUrl + '>' +
+            description + '</a></h4></li>');
 
-              $('#output').append('<p> this channel is not streaming at this time.</p>');
+            $('#output').append('<p> this channel is not streaming at this time.</p>');
 
-              if (banner !== null) {
-              	$('#' + displayName).css('background-image', 'url(' + banner + ')');
-              } else {
-              	$('#' + displayName).css('background-color', '#7F0215');
-              }
-
+            if (banner !== null) {
+              $('#' + displayName).css('background-image', 'url(' + banner + ')');
             } else {
-              offOn = 1;
-
-              $('#output').append('<li id=' + displayName + '><img src=' + data1.logo + ' width="100" height="100"> <h2>' + 
-              	displayName + '</h2><h4 id="status"><a href=' + chanUrl + '>' + 
-              	description + '</a></h4></li>');
-
-              $('#output').append('<p> this channel is currently streaming: ' + data1.game + '</p>')
-
-              if (banner !== null) {
-              	$('#' + displayName).css('background-image', 'url(' + banner + ')');
-              } else {
-              	$('#' + displayName).css('background-color', '#0F7001');
-              }
+              $('#' + displayName).css('background-color', '#7F0215');
             }
 
+          } else {
+            offOn = 1;
+
+            $('#output').append('<li id=' + displayName + '><img src=' + data1.logo + ' width="100" height="100"> <h2>' + 
+            displayName + '</h2><h4 id="status"><a href=' + chanUrl + '>' + 
+            description + '</a></h4></li>');
+
+            $('#output').append('<p> this channel is currently streaming: ' + data1.game + '</p>')
+
+            if (banner !== null) {
+              $('#' + displayName).css('background-image', 'url(' + banner + ')');
+            } else {
+              $('#' + displayName).css('background-color', '#0F7001');
+            }
           }
-        });
+        }
+      });
     }
   }).fail(function() {
     //alert('JSON ERROR');
   });
 }
 
-/*function getBanner(){
-	$('#' + displayName).css("background-image", "url(" + banner + ")");
-	}...
-}*/
