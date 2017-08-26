@@ -1,3 +1,3 @@
-This is the web HQ for Austin's Gil Ganesh, an experimental pop quartet.
+This is the web HQ for Gil Ganesh, an experimental pop quartet from Austin, Texas.
 
 Enjoy :0 
