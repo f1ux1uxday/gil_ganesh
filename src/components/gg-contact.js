@@ -16,7 +16,7 @@ class Contact extends Component {
               FACEBOOK
             </a>
           </p>
-          <h4 id='email'> GILGANESHGG@GMAIL.COM </h4>
+          <h4 id='email'> INFO@GILGANESH.COM </h4>
           <p className='contact-link' id='twitter'>
             <a href='https://twitter.com/gilganesh' target='blank'>
               TWITTER
