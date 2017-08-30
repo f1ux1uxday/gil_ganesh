@@ -11,17 +11,17 @@ class Contact extends Component {
     if (this.props.view !== 'splash') {
       return (
         <div className='contact'>
-          <p className='contact-link' id='facebook'>
-            <a href='https://fb.me/gilganesh' target='blank'>
-              FACEBOOK
-            </a>
-          </p>
           <h4 id='email'> INFO@GILGANESH.COM </h4>
-          <p className='contact-link' id='twitter'>
+          <span className='contact-link' id='twitter'>
             <a href='https://twitter.com/gilganesh' target='blank'>
               TWITTER
             </a>
-          </p>
+          </span>
+          <span className='contact-link' id='facebook'>
+            <a href='https://fb.me/gilganesh' target='blank'>
+              FACEBOOK
+            </a>
+          </span>
         </div>
       )
     }

@@ -274,10 +274,10 @@ and (orientation : portrait) {
   }
 
   .contact {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-content: center;*/
     position: fixed;
     margin-left: -2%;
     top: 65%;
@@ -289,7 +289,9 @@ and (orientation : portrait) {
   }
 
   .contact-link {
+    display: inline;
     font-size: .7rem;
+    padding: 1%;
   }
 
 
