@@ -220,7 +220,7 @@ and (orientation : portrait) {
     float: left;
     width: 39rem;
     height: 10em;
-    margin-top: .6%;
+    margin-top: 2.75%;
     margin-left: -8%;
     margin-right: -8%;
   }
@@ -238,7 +238,7 @@ and (orientation : portrait) {
 
   .tagline {
     margin-left: -5%;
-    padding-top: 3%;
+    padding-top: 4.33%;
     padding-left: 0px;
     padding-right: 6.5%;
     padding-bottom: 0%;
