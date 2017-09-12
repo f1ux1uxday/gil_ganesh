@@ -2,8 +2,8 @@ html,body {
 	color: #262626;
 	text-align: center;
 	font-size: 150%;
-	font-family: 'Lucida Console', Monaco, monospace;
-	background-repeat: repeat;
+	font-family: 'Unica One', cursive;
+	background-repeat: no-repeat;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
@@ -11,18 +11,50 @@ html,body {
 	overflow:auto;
 }
 
-#temperature {
-	margin:auto;
+.weatherBox {
+  display: flex;
+	position: fixed;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	top: 5%;
+	left: 10%;
+  width: 80%;
+	height: auto;
 }
 
-#imgdiv {
-	width: 100%;
-	height: 200%;
+#cityTemp {
+}
+
+#temperature {
+	/*margin:auto;*/
 }
 
 #conditions {
 	font-size: 3em;
 	color: yellow;
+}
+
+@media screen
+and (max-width: 1024px)
+and (orientation: landscape) {
+	body {
+		font-size: 90%;
+	}
+
+	.weatherBox {
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	#conditions {
+		padding-left: 10%;
+	}
+
+	#windCoord {
+		padding-left: 5%;
+	}
 }
 
 @media (max-width: 600px) {

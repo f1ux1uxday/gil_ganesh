@@ -47,41 +47,41 @@ $(document).ready(function(){
 					windDirection = "";
 				}
 				console.log(windDirection);
-				
+
 					//dynamically select background-image
 				if (data.weather[0].icon == "01d") {
-					$("html").css("background-image", "url('pictures/clearDay.jpg')");
+					$("body").css("background-color", "#75a6f9");
 					$("#cityTemp").css("color", "#ffffff");
 				} else if (data.weather[0].icon == "01n") {
-					$("html").css("background-image", "url('pictures/clearNight.jpg')");
-					$("body").css("color", "#feffed");
+					$("body").css("background-color", "#333");
+					$("body").css("color", "#feddef");
 				} else if (data.weather[0].icon == "02d" || data.weather[0].icon == "03d" || data.weather[0].icon == "04d") {
-					$("html").css("background-image", "url('pictures/cloudDay.jpg')");
+					$("body").css("background-color", "#686868");
 					$("#conditions").css("color", "#75a6f9");//#262626
 				} else if (data.weather[0].icon == "02n" || data.weather[0].icon == "03n" || data.weather[0].icon == "04n") {
-					$("html").css("background-image", "url('pictures/cloudNight.jpg')");
-					$("#cityTemp").css("color", "#feffed");
+					$("body").css("background-color", "#262626");
+					$("#cityTemp").css("color", "#feffeb");
 				} else if (data.weather[0].icon == "50d" || data.weather[0].icon == "50n") {
-					$("html").css("background-image", "url('pictures/themist.jpg')");
-					$("body").css("color", "#ffffff");
+					$("body").css("background-color", "#999");
+					$("body").css("color", "#555");
 					$("#conditions").css("color", "#75a6f9");
 				} else if (data.weather[0].icon == "09d" || data.weather[0].icon =="09n" || data.weather[0].icon == "10d" || data.weather[0].icon == "10n") {
-					$("html").css("background-image", "url('pictures/rainy.jpg')");
-					$("body").css("color", "#ffffff");
+					$("body").css("background-image", "#444");
+					$("body").css("color", "#84d5f5");
 					$("#conditions").css("color", "#353535");
 				} else if (data.weather[0].icon === '13d' || data.weather[0].icon === '13n') {
-					$("html").css("background-image", "url('pictures.snowy.jpg')"); 
-					$("body").css("color", "#cccccc");
+					$("body").css("background-color", "#ddd");
+					$("body").css("color", "#75a6f9");
 					$("#conditions").css("color", "#353535");
 				} else if (data.weather[0].icon == "11d" || data.weather[0].icon == "11n") {
-					$("html").css("background-image", "url('pictures/thunder.jpg')"); //yellow
-					$("#conditions").css("color", "#feffed");
+					$("body").css("background-color", "#222"); // thunder
+					$("#conditions").css("color", "#beffeb");
 				} else if (data.weather[0].id >= 900 && data.weather[0].id <= 902 || data.weather[0].id == 905 || data.weather[0].id == 906 || data.weather[0].id >= 952 && data.weather[0].id <= 962) {
-					$("html").css("background-image", "url('pictures/windy.jpg')");
+					$("body").css("background-image", "#dddccc");
 					$("body").css("color", "#75a6f9");
 					$("#conditions").css("color", "#0f3ei5");//#28a839
 				} else {
-					$("html").css("background-image", "none");
+					$("body").css("background-color", "#353535");
 				}
 
 				var city = data.name;
@@ -145,17 +145,17 @@ $(document).ready(function(){
 					}
 				});
 			}
-	
-	
+
+
 	if (navigator.geolocation) {
-		
+
 		navigator.geolocation.getCurrentPosition(function(position) {
 			var lati = position.coords.latitude;
 			var long = position.coords.longitude;
 
 			var api = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + long + '&appid=d5793ed823e510a805892083b90c3782';
 
-				//call api 
+				//call api
 			$.getJSON(api, function(data){
 				//retrieve JSON data (url, function(parameter))
 				tabulate(data);
@@ -183,7 +183,7 @@ $(document).ready(function(){
 			}).fail(function() {
 				console.log('xhr error');
 			});
-	
+
 		});
 	}
 
