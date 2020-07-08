@@ -153,7 +153,7 @@ $(document).ready(function(){
 			var lati = position.coords.latitude;
 			var long = position.coords.longitude;
 
-			var api = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + long + '&appid=d5793ed823e510a805892083b90c3782';
+			var api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + long + '&appid=d5793ed823e510a805892083b90c3782';
 
 				//call api
 			$.getJSON(api, function(data){
@@ -171,7 +171,7 @@ $(document).ready(function(){
 			console.log(arguments);
 			var zip = prompt('What is your zip code?');
 
-			var api = 'http://api.openweathermap.org/data/2.5/weather?zip='+zip+',us&appid=d5793ed823e510a805892083b90c3782';
+			var api = 'https://api.openweathermap.org/data/2.5/weather?zip='+zip+',us&appid=d5793ed823e510a805892083b90c3782';
 					//call api
 			console.log(api);
 
